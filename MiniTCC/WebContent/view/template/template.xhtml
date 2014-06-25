@@ -1,0 +1,115 @@
+<html xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:p="http://primefaces.org/ui">
+<h:head>
+	<link type="text/css" rel="stylesheet" href="view/css/style.css" />
+	<style>
+body {
+	margin: 0px;
+	padding: 0px;
+	min-height: 100%;
+}
+
+#dvTopo {
+	width: 100%;
+	height: 80px;
+}
+
+#dvCentro {
+	width: 98%;
+	margin: auto;
+	min-height: 100%;
+	border: 1px solid #a6c9e2;
+	background: #fcfdfd;
+	border-radius: 5px;
+}
+
+.painel {
+	border: none;
+}
+
+#dvRodape {
+	clear: both;
+	width: 100%;
+	height: 50px;
+	bottom: 0px;
+	border-radius: 5px;
+	border: 1px solid #ddd;
+	text-align: center;
+	line-height: 50px;
+	box-sizing: border-box;
+	margin-top: 20px;
+	border: 1px solid #a6c9e2;
+	background: #fcfdfd;
+}
+
+.gridPanel tr,td {
+	border: none !important;
+}
+
+.gridBotons {
+	margin-top: 10px;
+	margin-left: 25%;
+}
+
+.gridBotons tr,td {
+	border: none !important;
+}
+
+#DivCad {
+	margin-top: 25px;
+	margin-left: 20%;
+}
+
+#DivCadFuncao {
+	margin-top: 25px;
+	margin-left: 35%;
+}
+
+.ui-outputlabel-rfi {
+	color: red;
+}
+</style>
+</h:head>
+<h:body>
+	<div id="dvTopo">
+		<p:menubar>
+			<p:menuitem value="Inicio" url="/index.jsf" />
+			<p:submenu label="Cadastros">
+				<p:menuitem value="Cliente" url="/pages/cliente/cadCliente.jsf" />
+				<p:menuitem value="Funcionario"
+						url="/pages/funcionario/cadFuncionario.jsf" />
+				<p:submenu label="Sistema">
+					<p:menuitem value="Veiculo" url="/pages/veiculo/cadVeiculo.jsf" />
+					<p:menuitem value="Empresa" url="/pages/empresa/cadEmpresa.jsf" />
+					<p:menuitem value="Funcao" url="/pages/funcao/cadFuncao.jsf" />
+					<p:menuitem value="Usuario" url="/pages/usuario/cadUsuario.jsf" />
+				</p:submenu>
+			</p:submenu>
+			<p:submenu label="Movimentacao">
+				<p:menuitem value="Passagem" url="#" />
+			</p:submenu>
+			<p:submenu label="Relatorio">
+				<p:menuitem value="Cliente" url="/pages/cliente/listCliente.jsf" />
+				<p:menuitem value="Passagens" url="#" />
+					<p:menuitem value="Funcionario"
+						url="/pages/funcionario/listFuncionario.jsf" />
+				<p:submenu label="Sistema">
+					<p:menuitem value="Veiculo" url="/pages/veiculo/listVeiculo.jsf" />
+					<p:menuitem value="Empresa" url="/pages/empresa/listEmpresa.jsf" />
+					<p:menuitem value="Funcoes" url="/pages/funcao/listFuncao.jsf" />
+					<p:menuitem value="Ususarios" url="/pages/usuario/listUsuario.jsf" />
+				</p:submenu>
+			</p:submenu>
+		</p:menubar>
+
+	</div>
+	<div id="dvCentro">
+		<p:panel styleClass="painel">
+			<ui:insert name="centro" />
+		</p:panel>
+	</div>
+	<div id="dvRodape">Copyright - Guilherme Fernandes Campos -2014</div>
+</h:body>
+</html>

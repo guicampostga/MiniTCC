@@ -1,0 +1,72 @@
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:p="http://primefaces.org/ui"
+	template="/view/template/template.xhtml">
+	<ui:define name="centro">
+	<f:facet name="header">
+	  				Veiculos Cadastrados
+	  			</f:facet>
+		<h:form id="formList">
+
+			<p:growl id="growl" autoUpdate="true" life="3500" />
+				<p:dataTable id="tableCliente" paginator="true" rows="10"
+					value="#{veiculoController.listaDM}" var="_veiculo"
+					emptyMessage="Nao foi encontrado nenhuma informacao!">
+
+					<p:column >
+						<f:facet name="header">
+							<h:outputText value="Codigo"></h:outputText>
+						</f:facet>
+						<h:outputText value="#{_veiculo.codigo}" />
+					</p:column>
+
+					<p:column>
+						<f:facet name="header">
+							<h:outputText value="Modelo"></h:outputText>
+						</f:facet>
+						<h:outputText value="#{_veiculo.modeloVeiculo}" />
+					</p:column>
+					<p:column>
+						<f:facet name="header">
+							<h:outputText value="Marca"></h:outputText>
+						</f:facet>
+						<h:outputText value="#{_veiculo.marca}" />
+					</p:column>
+					<p:column>
+						<f:facet name="header">
+							<h:outputText value="Placa"></h:outputText>
+						</f:facet>
+						<h:outputText value="#{_veiculo.placa}" />
+					</p:column>
+					<p:column>
+						<f:facet name="header">
+							<h:outputText value="Ano Fabricacao"></h:outputText>
+						</f:facet>
+						<h:outputText value="#{_veiculo.ano}" />
+					</p:column>
+					<p:column>
+						<f:facet name="header">
+							<h:outputText value="Vagas"></h:outputText>
+						</f:facet>
+						<h:outputText value="#{_veiculo.qtdVagas}" />
+					</p:column>
+					<p:column>
+						<f:facet name="header">
+							<h:outputText value="Acoes"></h:outputText>
+						</f:facet>
+						<p:commandLink update="tableCliente"
+							action="#{veiculoController.exibirFormularioEditar()}">
+							<h:graphicImage value="/view/imgs/editar.png" />
+						</p:commandLink>
+						<p:commandLink update="tableCliente"
+							action="#{veiculoController.remover()}">
+							<h:graphicImage value="/view/imgs/remover.png" />
+						</p:commandLink>
+					</p:column>
+				</p:dataTable>
+		</h:form>
+
+	</ui:define>
+</ui:composition>

@@ -1,0 +1,56 @@
+body {
+	margin: 0px;
+	padding: 0px;
+	min-height: 100%;
+}
+
+#dvTopo {
+	width: 100%;
+	height: 80px;
+}
+
+#dvCentro {
+	width: 98%;
+	margin: auto;
+	min-height: 100%;
+	border: 1px solid #a6c9e2;
+	background: #fcfdfd;
+	border-radius: 5px;
+}
+
+.painel {
+	border: none;
+}
+
+#dvRodape {
+	clear: both;
+	width: 100%;
+	height: 50px;
+	bottom: 0px;
+	border-radius: 5px;
+	border: 1px solid #ddd;
+	text-align: center;
+	line-height: 50px;
+	box-sizing: border-box;
+	margin-top: 20px;
+	border: 1px solid #a6c9e2;
+	background: #fcfdfd;
+}
+
+.gridPanel tr,td {
+	border: none !important;
+}
+
+.gridBotons {
+	margin-top: 10px;
+	margin-left: 25%;
+}
+
+.gridBotons tr,td {
+	border: none !important;
+}
+
+#DivCad {
+	margin-top: 25px;
+	margin-left: 20%;
+}
