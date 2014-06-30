@@ -24,7 +24,7 @@
 
 					<p:outputLabel value="RG" for="txtRg">
 					</p:outputLabel>
-					<p:inputText id="txtRg"	value="#{clienteController.objeto.rg}" />
+					<p:inputText id="txtRg" value="#{clienteController.objeto.rg}" />
 
 					<p:outputLabel value="Cpf" for="txtCpf">
 					</p:outputLabel>
@@ -59,7 +59,8 @@
 
 					<p:outputLabel value="Complemento" for="txtComplemento">
 					</p:outputLabel>
-					<p:inputText id="txtComplemento" value="#{clienteController.objeto.complemento}" />
+					<p:inputText id="txtComplemento"
+						value="#{clienteController.objeto.complemento}" />
 
 					<p:outputLabel value="Telefone" for="txtTelefone">
 					</p:outputLabel>
@@ -70,19 +71,17 @@
 					<p:outputLabel value="Cidade" for="txtCidade">
 					</p:outputLabel>
 					<p:inputText id="txtCidade" required="true"
-					requiredMessage="Favor informe sua Cidade"
+						requiredMessage="Favor informe sua Cidade"
 						value="#{clienteController.objeto.cidade}" />
 
 					<p:outputLabel value="UF" for="txtUF" />
-				<p:selectOneMenu value="#{clienteController.objeto.uf}"
-					id="txtUF" required="true"
-					requiredMessage="Selecione um Estado">
-					<f:selectItem itemLabel="- Selecione -" itemValue="" />
-					<f:selectItems value="#{ufController.lista}" var="_uf"
-						itemValue="#{_uf.codigo}"
-						itemLabel="#{_uf.uf}" />
+					<p:selectOneMenu value="#{clienteController.objeto.uf}" id="txtUF"
+						required="true" requiredMessage="Selecione um Estado">
+						<f:selectItem itemLabel="- Selecione -" itemValue="" />
+						<f:selectItems value="#{ufController.lista}" var="_uf"
+							itemValue="#{_uf.codigo}" itemLabel="#{_uf.uf}" />
 
-				</p:selectOneMenu>
+					</p:selectOneMenu>
 				</p:panelGrid>
 				<p:panelGrid columns="2" styleClass="gridBotons">
 					<p:commandButton value="Salvar"

@@ -4,6 +4,7 @@
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-facesconfig_2_1.xsd"
 	version="2.1">
+
 	<!-- Cliente Incio -->
 	<navigation-rule>
 		<from-view-id>/pages/cliente/listCliente.xhtml</from-view-id>
@@ -145,5 +146,6 @@
 		</navigation-case>
 	</navigation-rule>
 	<!-- Empresa Fim -->
+
 
 </faces-config>

@@ -79,7 +79,7 @@ body {
 			<p:submenu label="Cadastros">
 				<p:menuitem value="Cliente" url="/pages/cliente/cadCliente.jsf" />
 				<p:menuitem value="Funcionario"
-						url="/pages/funcionario/cadFuncionario.jsf" />
+					url="/pages/funcionario/cadFuncionario.jsf" />
 				<p:submenu label="Sistema">
 					<p:menuitem value="Veiculo" url="/pages/veiculo/cadVeiculo.jsf" />
 					<p:menuitem value="Empresa" url="/pages/empresa/cadEmpresa.jsf" />
@@ -93,8 +93,8 @@ body {
 			<p:submenu label="Relatorio">
 				<p:menuitem value="Cliente" url="/pages/cliente/listCliente.jsf" />
 				<p:menuitem value="Passagens" url="#" />
-					<p:menuitem value="Funcionario"
-						url="/pages/funcionario/listFuncionario.jsf" />
+				<p:menuitem value="Funcionario"
+					url="/pages/funcionario/listFuncionario.jsf" />
 				<p:submenu label="Sistema">
 					<p:menuitem value="Veiculo" url="/pages/veiculo/listVeiculo.jsf" />
 					<p:menuitem value="Empresa" url="/pages/empresa/listEmpresa.jsf" />
@@ -102,6 +102,9 @@ body {
 					<p:menuitem value="Ususarios" url="/pages/usuario/listUsuario.jsf" />
 				</p:submenu>
 			</p:submenu>
+			<f:facet name="options">
+				<p:button value="Sair" icon="ui-icon-extLink" href="/logout=true" />
+			</f:facet>
 		</p:menubar>
 
 	</div>

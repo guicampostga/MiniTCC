@@ -10,56 +10,56 @@
 	  				</f:facet>
 		<h:form id="formList">
 
-				<p:growl id="growl" autoUpdate="true" life="3500" />
-				<p:dataTable id="tableFuncionario" paginator="true" rows="10"
-					value="#{funcionarioController.listaDM}" var="_funcionario"
-					emptyMessage="Nao foi encontrado nenhuma informacao!">
+			<p:growl id="growl" autoUpdate="true" life="3500" />
+			<p:dataTable id="tableFuncionario" paginator="true" rows="10"
+				value="#{funcionarioController.listaDM}" var="_funcionario"
+				emptyMessage="Nao foi encontrado nenhuma informacao!">
 
-					<p:column>
-						<f:facet name="header">
-							<h:outputText value="Codigo"></h:outputText>
-						</f:facet>
-						<h:outputText value="#{_funcionario.codigo}" />
-					</p:column>
+				<p:column>
+					<f:facet name="header">
+						<h:outputText value="Codigo"></h:outputText>
+					</f:facet>
+					<h:outputText value="#{_funcionario.codigo}" />
+				</p:column>
 
-					<p:column>
-						<f:facet name="header">
-							<h:outputText value="Nome"></h:outputText>
-						</f:facet>
-						<h:outputText value="#{_funcionario.nome}" />
-					</p:column>
-					<p:column>
-						<f:facet name="header">
-							<h:outputText value="CPF"></h:outputText>
-						</f:facet>
-						<h:outputText value="#{_funcionario.cpf}" />
-					</p:column>
-					<p:column>
-						<f:facet name="header">
-							<h:outputText value="Funcao"></h:outputText>
-						</f:facet>
-						<h:outputText value="#{_funcionario.funcao}" />
-					</p:column>
-					<p:column>
-						<f:facet name="header">
-							<h:outputText value="Telefone"></h:outputText>
-						</f:facet>
-						<h:outputText value="#{_funcionario.telefone}" />
-					</p:column>
-					<p:column>
-						<f:facet name="header">
-							<h:outputText value="Acoes"></h:outputText>
-						</f:facet>
-						<p:commandLink update="tableFuncionario"
-							action="#{funcionarioController.exibirFormularioEditar()}">
-							<h:graphicImage value="/view/imgs/editar.png" />
-						</p:commandLink>
-						<p:commandLink update="tableFuncionario"
-							action="#{funcionarioController.remover()}">
-							<h:graphicImage value="/view/imgs/remover.png" />
-						</p:commandLink>
-					</p:column>
-				</p:dataTable>
-			</h:form>
+				<p:column>
+					<f:facet name="header">
+						<h:outputText value="Nome"></h:outputText>
+					</f:facet>
+					<h:outputText value="#{_funcionario.nome}" />
+				</p:column>
+				<p:column>
+					<f:facet name="header">
+						<h:outputText value="CPF"></h:outputText>
+					</f:facet>
+					<h:outputText value="#{_funcionario.cpf}" />
+				</p:column>
+				<p:column>
+					<f:facet name="header">
+						<h:outputText value="Funcao"></h:outputText>
+					</f:facet>
+					<h:outputText value="#{_funcionario.funcao}" />
+				</p:column>
+				<p:column>
+					<f:facet name="header">
+						<h:outputText value="Telefone"></h:outputText>
+					</f:facet>
+					<h:outputText value="#{_funcionario.telefone}" />
+				</p:column>
+				<p:column>
+					<f:facet name="header">
+						<h:outputText value="Acoes"></h:outputText>
+					</f:facet>
+					<p:commandLink update="tableFuncionario"
+						action="#{funcionarioController.exibirFormularioEditar()}">
+						<h:graphicImage value="/view/imgs/editar.png" />
+					</p:commandLink>
+					<p:commandLink update="tableFuncionario"
+						action="#{funcionarioController.remover()}">
+						<h:graphicImage value="/view/imgs/remover.png" />
+					</p:commandLink>
+				</p:column>
+			</p:dataTable>
+		</h:form>
 	</ui:define>
 </ui:composition>

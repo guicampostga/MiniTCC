@@ -5,58 +5,61 @@
 	xmlns:p="http://primefaces.org/ui"
 	template="/view/template/template.xhtml">
 	<ui:define name="topo">
-		<h:outputText value="Topo Pagina 1"/>
+		<h:outputText value="Topo Pagina 1" />
 	</ui:define>
-	
+
 	<ui:define name="centro">
-	<f:facet name="header">
+		<f:facet name="header">
 	  				Empresas cadastradas
 	  			</f:facet>
-	<h:form id="formList">
-			<p:dataTable id="tableEmpresa" paginator="true" rows="10" value="#{empresaController.listaDM}" var="_empresa"
-   emptyMessage="Nao foi encontrado nenhuma informacao!">
-		
-		<p:column>
-			<f:facet name="header">
-				<h:outputText value="Codigo"></h:outputText>
-			</f:facet>
-			<h:outputText value="#{_empresa.codigo}"/>
-		</p:column>
-		
-		<p:column>
-			<f:facet name="header">
-				<h:outputText value="Nome Fantazia"></h:outputText>
-			</f:facet>
-			<h:outputText value="#{_empresa.nomeFantazia}"/>
-		</p:column>
-		<p:column>
-			<f:facet name="header">
-				<h:outputText value="Razao Social"></h:outputText>
-			</f:facet>
-			<h:outputText value="#{_empresa.razaoSocial}"/>
-		</p:column>
-		<p:column>
-			<f:facet name="header">
-				<h:outputText value="CNPJ"></h:outputText>
-			</f:facet>
-			<h:outputText value="#{_empresa.cnpj}"/>
-		</p:column>
-		<p:column>
-			<f:facet name="header">
-				<h:outputText value="Telefone"></h:outputText>
-			</f:facet>
-			<h:outputText value="#{_empresa.telefone}"/>
-		</p:column>
-		<p:column>
-			<f:facet name="header">
-				<h:outputText value="Acoes"></h:outputText>
-			</f:facet>
-			<p:commandButton value="Editar" action="#{empresaController.exibirFormularioEditar()}"/>
-		<p:commandButton value="Remover" update="tableEmpresa" action="#{empresaController.remover()}"/>
-		</p:column>
-	</p:dataTable>
-			
-	</h:form>
-	
+		<h:form id="formList">
+			<p:dataTable id="tableEmpresa" paginator="true" rows="10"
+				value="#{empresaController.listaDM}" var="_empresa"
+				emptyMessage="Nao foi encontrado nenhuma informacao!">
+
+				<p:column>
+					<f:facet name="header">
+						<h:outputText value="Codigo"></h:outputText>
+					</f:facet>
+					<h:outputText value="#{_empresa.codigo}" />
+				</p:column>
+
+				<p:column>
+					<f:facet name="header">
+						<h:outputText value="Nome Fantazia"></h:outputText>
+					</f:facet>
+					<h:outputText value="#{_empresa.nomeFantazia}" />
+				</p:column>
+				<p:column>
+					<f:facet name="header">
+						<h:outputText value="Razao Social"></h:outputText>
+					</f:facet>
+					<h:outputText value="#{_empresa.razaoSocial}" />
+				</p:column>
+				<p:column>
+					<f:facet name="header">
+						<h:outputText value="CNPJ"></h:outputText>
+					</f:facet>
+					<h:outputText value="#{_empresa.cnpj}" />
+				</p:column>
+				<p:column>
+					<f:facet name="header">
+						<h:outputText value="Telefone"></h:outputText>
+					</f:facet>
+					<h:outputText value="#{_empresa.telefone}" />
+				</p:column>
+				<p:column>
+					<f:facet name="header">
+						<h:outputText value="Acoes"></h:outputText>
+					</f:facet>
+					<p:commandButton value="Editar"
+						action="#{empresaController.exibirFormularioEditar()}" />
+					<p:commandButton value="Remover" update="tableEmpresa"
+						action="#{empresaController.remover()}" />
+				</p:column>
+			</p:dataTable>
+
+		</h:form>
+
 	</ui:define>
 </ui:composition>

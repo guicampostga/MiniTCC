@@ -74,22 +74,24 @@
 						<f:selectItems value="#{ufController.lista}" var="_uf"
 							itemValue="#{_uf.codigo}" itemLabel="#{_uf.uf}" />
 					</p:selectOneMenu>
-					
+
 					<p:outputLabel value="Telefone" for="txtTelefone">
 					</p:outputLabel>
 					<p:inputMask id="txtTelefone" mask="(99) 9999-9999" required="true"
 						requiredMessage="Campo Telefone Obrigatorio"
 						value="#{funcionarioController.objeto.telefone}" />
-						
-							<p:outputLabel value="Email" for="txtEmail">
+
+					<p:outputLabel value="Email" for="txtEmail">
 					</p:outputLabel>
-					<p:inputText id="txtEmail" required="true" placeholder="usuario@dominio.com"
+					<p:inputText id="txtEmail" required="true"
+						placeholder="usuario@dominio.com"
 						value="#{funcionarioController.objeto.email}"
 						requiredMessage="Campo Email obrigatorio" />
-					
+
 					<p:outputLabel value="Funcao" for="txtFuncao" />
 					<p:selectOneMenu value="#{funcionarioController.objeto.funcao}"
-						id="txtFuncao" required="true" requiredMessage="Selecione uma Funcao">
+						id="txtFuncao" required="true"
+						requiredMessage="Selecione uma Funcao">
 						<f:selectItem itemLabel="- Selecione -" itemValue="" />
 						<f:selectItems value="#{funcaoController.lista}" var="_funcao"
 							itemValue="#{_funcao.codigo}" itemLabel="#{_funcao.descricao}" />
@@ -107,7 +109,8 @@
 						action="#{funcionarioController.alterar()}"></p:commandButton>
 
 					<p:commandButton value="Cancelar" icon="ui-icon-cancel"
-						update=" formCadFuncionario " action="#{funcionarioController.limpar}" />
+						update=" formCadFuncionario "
+						action="#{funcionarioController.limpar}" />
 				</p:panelGrid>
 			</h:form>
 		</div>

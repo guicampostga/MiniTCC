@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<pageflow:Pageflow xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:pageflow="http://www.sybase.com/suade/pageflow" id="pf14037388124390" configfile="/MiniTCC/WebContent/WEB-INF/faces-config.xml">
+  <nodes xsi:type="pageflow:PFPage" name="pages/cliente/listCliente.xhtml" id="pf14037388458321" referenceLink="//@navigationRule.0/@navigationCase.2/@toViewId|" outlinks="pf14037388458322 pf14037388458323 pf14037388458324" inlinks="pf14037388458324" path="/pages/cliente/listCliente.xhtml"/>
+  <nodes xsi:type="pageflow:PFPage" name="pages/cliente/cadCliente.xhtml" id="pf14037388458335" referenceLink="//@navigationRule.0/@navigationCase.1/@toViewId|" inlinks="pf14037388458322 pf14037388458323" path="/pages/cliente/cadCliente.xhtml"/>
+  <nodes xsi:type="pageflow:PFPage" name="pages/veiculo/listVeiculo.xhtml" id="pf14037388458336" referenceLink="//@navigationRule.2/@navigationCase.0/@toViewId|" outlinks="pf14037388458337 pf14037388458338 pf14037388458339 pf140373884583310" inlinks="pf14037388458339 pf140373884583310 pf140373884583311" path="/pages/veiculo/listVeiculo.xhtml"/>
+  <nodes xsi:type="pageflow:PFPage" name="pages/veiculo/cadVeiculo.xhtml" id="pf140373884583312" referenceLink="//@navigationRule.2/@fromViewId|" outlinks="pf140373884583311" inlinks="pf14037388458337 pf14037388458338" path="/pages/veiculo/cadVeiculo.xhtml"/>
+  <nodes xsi:type="pageflow:PFPage" name="pages/funcao/listFuncao.xhtml" id="pf140373884583313" referenceLink="//@navigationRule.3/@navigationCase.2/@toViewId|" outlinks="pf140373884583314 pf140373884583315 pf140373884583316" inlinks="pf140373884583316" path="/pages/funcao/listFuncao.xhtml"/>
+  <nodes xsi:type="pageflow:PFPage" name="pages/funcao/cadFuncao.xhtml" id="pf140373884583317" referenceLink="//@navigationRule.4/@fromViewId|" outlinks="pf140373884583318" inlinks="pf140373884583314 pf140373884583315" path="/pages/funcao/cadFuncao.xhtml"/>
+  <nodes xsi:type="pageflow:PFPage" name="/pages/funcao/listFuncao.xhtml" id="pf140373884583319" referenceLink="//@navigationRule.4/@navigationCase.0/@toViewId|" inlinks="pf140373884583318" path="//pages/funcao/listFuncao.xhtml"/>
+  <nodes xsi:type="pageflow:PFPage" name="pages/empresa/listEmpresa.xhtml" id="pf140373884583420" referenceLink="//@navigationRule.6/@navigationCase.0/@toViewId|" outlinks="pf140373884583421 pf140373884583422 pf140373884583423" inlinks="pf140373884583423 pf140373884583424" path="/pages/empresa/listEmpresa.xhtml"/>
+  <nodes xsi:type="pageflow:PFPage" name="pages/empresa/cadEmpresa.xhtml" id="pf140373884583425" referenceLink="//@navigationRule.6/@fromViewId|" outlinks="pf140373884583424" inlinks="pf140373884583421 pf140373884583422" path="/pages/empresa/cadEmpresa.xhtml"/>
+  <nodes xsi:type="pageflow:PFPage" name="pages/funcionario/listFuncionario.xhtml" id="pf140373884583426" referenceLink="//@navigationRule.8/@navigationCase.0/@toViewId|" outlinks="pf140373884583427 pf140373884583428 pf140373884583429" inlinks="pf140373884583430" path="/pages/funcionario/listFuncionario.xhtml"/>
+  <nodes xsi:type="pageflow:PFPage" name="pages/funcionario/cadFuncionario.xhtml" id="pf140373884583431" referenceLink="//@navigationRule.8/@fromViewId|" outlinks="pf140373884583430" inlinks="pf140373884583427 pf140373884583428" path="/pages/funcionario/cadFuncionario.xhtml"/>
+  <nodes xsi:type="pageflow:PFPage" name="/pages/funcionario/listFuncionario.xhtml" id="pf140373884583432" referenceLink="//@navigationRule.7/@navigationCase.2/@toViewId|" inlinks="pf140373884583429" path="//pages/funcionario/listFuncionario.xhtml"/>
+  <links id="pf14037388458322" target="pf14037388458335" source="pf14037388458321" outcome="exibirFormularioIncluir" redirect="true"/>
+  <links id="pf14037388458323" target="pf14037388458335" source="pf14037388458321" outcome="exibirFormularioEditar" redirect="true"/>
+  <links id="pf14037388458324" target="pf14037388458321" source="pf14037388458321" outcome="listar" redirect="true"/>
+  <links id="pf14037388458337" target="pf140373884583312" source="pf14037388458336" outcome="exibirFormularioIncluir" redirect="true"/>
+  <links id="pf14037388458338" target="pf140373884583312" source="pf14037388458336" outcome="exibirFormularioEditar" redirect="true"/>
+  <links id="pf14037388458339" target="pf14037388458336" source="pf14037388458336" outcome="listar" redirect="true"/>
+  <links id="pf140373884583310" target="pf14037388458336" source="pf14037388458336" outcome="listar" redirect="true"/>
+  <links id="pf140373884583311" target="pf14037388458336" source="pf140373884583312" outcome="listar" redirect="true"/>
+  <links id="pf140373884583314" target="pf140373884583317" source="pf140373884583313" outcome="exibirFormularioIncluir" redirect="true"/>
+  <links id="pf140373884583315" target="pf140373884583317" source="pf140373884583313" outcome="exibirFormularioEditar" redirect="true"/>
+  <links id="pf140373884583316" target="pf140373884583313" source="pf140373884583313" outcome="listar" redirect="true"/>
+  <links id="pf140373884583318" target="pf140373884583319" source="pf140373884583317" outcome="listar" redirect="true"/>
+  <links id="pf140373884583421" target="pf140373884583425" source="pf140373884583420" outcome="exibirFormularioIncluir" redirect="true"/>
+  <links id="pf140373884583422" target="pf140373884583425" source="pf140373884583420" outcome="exibirFormularioEditar" redirect="true"/>
+  <links id="pf140373884583423" target="pf140373884583420" source="pf140373884583420" outcome="listar" redirect="true"/>
+  <links id="pf140373884583424" target="pf140373884583420" source="pf140373884583425" outcome="listar" redirect="true"/>
+  <links id="pf140373884583427" target="pf140373884583431" source="pf140373884583426" outcome="exibirFormularioIncluir" redirect="true"/>
+  <links id="pf140373884583428" target="pf140373884583431" source="pf140373884583426" outcome="exibirFormularioEditar" redirect="true"/>
+  <links id="pf140373884583429" target="pf140373884583432" source="pf140373884583426" outcome="listar" redirect="true"/>
+  <links id="pf140373884583430" target="pf140373884583426" source="pf140373884583431" outcome="listar" redirect="true"/>
+</pageflow:Pageflow>
