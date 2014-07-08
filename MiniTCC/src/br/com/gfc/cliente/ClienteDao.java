@@ -64,9 +64,11 @@ public class ClienteDao extends BaseDao<Cliente> {
 			FacesContext.getCurrentInstance().addMessage(null,
 					new FacesMessage("Salvo com sucesso"));
 		} catch (Exception e) {
+			FacesContext.getCurrentInstance().addMessage(null,
+					new FacesMessage(e.getMessage()));
 			e.printStackTrace();
-			
 		} finally {
+			conexao.fecharConexao();
 			super.conexao.fecharConexao();
 		}
 	}
@@ -108,8 +110,11 @@ public class ClienteDao extends BaseDao<Cliente> {
 			FacesContext.getCurrentInstance().addMessage(null,
 					new FacesMessage("Alterado com sucesso"));
 		} catch (Exception e) {
+			FacesContext.getCurrentInstance().addMessage(null,
+					new FacesMessage(e.getMessage()));
 			e.printStackTrace();
 		} finally {
+			conexao.fecharConexao();
 			super.conexao.fecharConexao();
 		}
 	}
@@ -124,10 +129,11 @@ public class ClienteDao extends BaseDao<Cliente> {
 			preparedStatement.setInt(1, cliente.getCodigo());
 			preparedStatement.executeUpdate();
 		} catch (Exception e) {
+			FacesContext.getCurrentInstance().addMessage(null,
+					new FacesMessage(e.getMessage()));
 			e.printStackTrace();
 		} finally {
-			FacesContext.getCurrentInstance().addMessage(null,
-					new FacesMessage("Deletado com sucesso"));
+			conexao.fecharConexao();
 			super.conexao.fecharConexao();
 		}
 	}
@@ -137,7 +143,7 @@ public class ClienteDao extends BaseDao<Cliente> {
 		List<Cliente> clientes = new ArrayList<Cliente>();
 		try {
 			stmt = (Statement) conexao.getConn().createStatement();
-			String sql = "SELECT * FROM CLIENTE";
+			String sql = "SELECT * FROM CLIENTE left join estado on cliente.estado_codigo = estado.estado_codigo";
 			ResultSet rs = stmt.executeQuery(sql);
 			while (rs.next()) {
 				Cliente cliente = new Cliente();
@@ -160,12 +166,16 @@ public class ClienteDao extends BaseDao<Cliente> {
 				cliente.setTelefone(rs.getString("CLIENTE_TELEFONE"));
 				cliente.setCidade(rs.getString("CLIENTE_CIDADE"));
 				cliente.setUf(rs.getInt("ESTADO_CODIGO"));
+				cliente.setUfNome(rs.getString("estado_descricao"));
 				clientes.add(cliente);
 
 			}
 		} catch (Exception e) {
+			FacesContext.getCurrentInstance().addMessage(null,
+					new FacesMessage(e.getMessage()));
 			e.printStackTrace();
 		} finally {
+			conexao.fecharConexao();
 			super.conexao.fecharConexao();
 		}
 		return clientes;
@@ -204,8 +214,11 @@ public class ClienteDao extends BaseDao<Cliente> {
 
 			}
 		} catch (Exception e) {
+			FacesContext.getCurrentInstance().addMessage(null,
+					new FacesMessage(e.getMessage()));
 			e.printStackTrace();
 		} finally {
+			conexao.fecharConexao();
 			super.conexao.fecharConexao();
 		}
 		return cliente;

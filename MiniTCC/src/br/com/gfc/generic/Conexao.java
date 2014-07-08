@@ -26,6 +26,7 @@ public class Conexao{
  
     public void fecharConexao() {
         try {
+        	conn.clearWarnings();
             conn.close();
         //PEGA E MOSTRA OS ERROS GERADOS NO METODO
         } catch (SQLException e) { 

@@ -1,0 +1,58 @@
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:p="http://primefaces.org/ui"
+	template="/view/template/template.xhtml">
+	<ui:define name="centro">
+
+		<h:form id="formList">
+			<p:growl id="growl" autoUpdate="true" life="3500" />
+			<p:dataTable id="tableViagem" paginator="true" rows="10"
+				value="#{viagemController.listaDM}" var="_viagem"
+				emptyMessage="Nao foi encontrado nenhuma informacao!">
+
+				<p:column>
+					<f:facet name="header">
+						<h:outputText value="Codigo"></h:outputText>
+					</f:facet>
+					<h:outputText value="#{_viagem.codigo}" />
+				</p:column>
+
+				<p:column>
+					<f:facet name="header">
+						<h:outputText value="Origem"></h:outputText>
+					</f:facet>
+					<h:outputText value="#{_viagem.origemId}" />
+				</p:column>
+				<p:column>
+					<f:facet name="header">
+						<h:outputText value="Destino"></h:outputText>
+					</f:facet>
+					<h:outputText value="#{_viagem.destinoId}" />
+				</p:column>
+				<p:column>
+					<f:facet name="header">
+						<h:outputText value="Data"></h:outputText>
+					</f:facet>
+					<h:outputText value="#{_viagem.viagemData}" />
+				</p:column>
+				<p:column>
+					<f:facet name="header">
+						<h:outputText value="Acoes"></h:outputText>
+					</f:facet>
+					<p:commandLink update="tableViagem"
+						action="#{viagemController.exibirFormularioEditar()}">
+						<h:graphicImage value="/view/imgs/editar.png" />
+					</p:commandLink>
+					<p:commandLink update="tableViagem"
+						action="#{viagemController.remover()}">
+						<h:graphicImage value="/view/imgs/remover.png" />
+					</p:commandLink>
+					
+				</p:column>
+			</p:dataTable>
+		</h:form>
+
+	</ui:define>
+</ui:composition>

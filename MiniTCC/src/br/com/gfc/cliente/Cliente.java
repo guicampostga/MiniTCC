@@ -16,6 +16,15 @@ public class Cliente {
 	private String telefone;
 	private String cidade;
 	private Integer uf;
+	private String ufNome;
+
+	public String getUfNome() {
+		return ufNome;
+	}
+
+	public void setUfNome(String ufNome) {
+		this.ufNome = ufNome;
+	}
 
 	public Integer getCodigo() {
 		return codigo;

@@ -5,7 +5,14 @@
 	xmlns:p="http://primefaces.org/ui"
 	template="/view/template/template.xhtml">
 	<ui:define name="centro">
-
+		<ui:insert>
+			<style>
+	.ui-outputlabel{
+	float: right;
+	font-weight: bold;
+}
+</style>
+		</ui:insert>
 		<h:form id="formList">
 
 			<p:growl id="growl" autoUpdate="true" life="3500" />
@@ -24,7 +31,14 @@
 					<f:facet name="header">
 						<h:outputText value="Nome"></h:outputText>
 					</f:facet>
-					<h:outputText value="#{_cliente.nome}" />
+					<p:commandLink onclick="PF('dlgCliente').show()"
+						update=":frmCliente"
+						action="#{clienteController.dadosCompletos()}"
+						style="text-decoration: none;">
+						<h:outputText id="cNome" value="#{_cliente.nome}" />
+					</p:commandLink>
+					<p:tooltip id="toolTipTrack" for="cNome"
+						value="Click para ver os dados completos!" trackMouse="true" />
 				</p:column>
 				<p:column>
 					<f:facet name="header">
@@ -42,6 +56,11 @@
 					<f:facet name="header">
 						<h:outputText value="Acoes"></h:outputText>
 					</f:facet>
+					<p:commandLink update=":frmViagens"
+						onclick="PF('dlgViagens').show()">
+						<f:param name="clienteId" value="#{_cliente.codigo}" />
+						<h:graphicImage value="/view/imgs/lupa.png" />
+					</p:commandLink>
 					<p:commandLink update="tableCliente"
 						action="#{clienteController.exibirFormularioEditar()}">
 						<h:graphicImage value="/view/imgs/editar.png" />
@@ -53,6 +72,124 @@
 				</p:column>
 			</p:dataTable>
 		</h:form>
+		<!-- Dialog Viagem Cliente -->
+
+		<p:dialog id="dlgViagens" position="center" widgetVar="dlgViagens"
+			resizable="false" header="Viagens realizadas pelo cliente" modal="true">
+			<h:form id="frmViagens">
+				<p:growl id="growl" autoUpdate="true" life="3500" />
+				<p:dataTable id="tableViagem" paginator="true" rows="10"
+					value="#{viagemController.listaDM}" var="_viagem"
+					emptyMessage="Nao foi encontrado nenhuma informacao!">
+
+					<p:column>
+						<f:facet name="header">
+							<h:outputText value="Codigo"></h:outputText>
+						</f:facet>
+						<h:outputText value="#{_viagem.codigo}" />
+					</p:column>
+
+					<p:column>
+						<f:facet name="header">
+							<h:outputText value="Origem"></h:outputText>
+						</f:facet>
+						<h:outputText value="#{_viagem.origem}" />
+					</p:column>
+					<p:column>
+						<f:facet name="header">
+							<h:outputText value="Destino"></h:outputText>
+						</f:facet>
+						<h:outputText value="#{_viagem.destino}" />
+					</p:column>
+					<p:column>
+						<f:facet name="header">
+							<h:outputText value="Data"></h:outputText>
+						</f:facet>
+						<h:outputText value="#{_viagem.viagemData}" />
+					</p:column>
+					<p:column>
+						<f:facet name="header">
+							<h:outputText value="Hora"></h:outputText>
+						</f:facet>
+						<h:outputText value="#{_viagem.viagemData}" />
+					</p:column>
+				</p:dataTable>
+			</h:form>
+		</p:dialog>
+
+		<!-- Dialog Clientes -->
+
+		<p:dialog id="dlgCliente" position="center" widgetVar="dlgCliente"
+			resizable="false" header="Cliente" modal="true">
+			<h:form id="frmCliente">
+				<p:growl id="growl" autoUpdate="true" life="3500" />
+
+				<p:panelGrid columns="4" styleClass="gridPanel">
+				
+					<p:outputLabel value="Codigo:" for="txtCodigo" >
+					</p:outputLabel>
+				
+					<h:outputText id="txtCodigo" readonly="true"
+						value="#{clienteController.objeto.codigo}" />
+					<p:outputLabel value="Nome:" for="txtNome" >
+					</p:outputLabel>
+					<h:outputText id="txtNome" value="#{clienteController.objeto.nome}" />
+
+					<p:outputLabel value="RG:" for="txtRg" >
+					</p:outputLabel>
+					<h:outputText id="txtRg" value="#{clienteController.objeto.rg}" />
+
+					<p:outputLabel value="CPF:" for="txtCpf" >
+					</p:outputLabel>
+					<h:outputText id="txtCpf" value="#{clienteController.objeto.cpf}" />
+
+
+					<p:outputLabel value="Data Nascimento:" for="txtDtNascimento" >
+					</p:outputLabel>
+
+					<h:outputText id="txtDtNascimento"
+						value="#{clienteController.objeto.dataNasc}">
+						<f:convertDateTime pattern="dd/MM/yyyy">
+						</f:convertDateTime>
+					</h:outputText>
+
+					<p:outputLabel value="Endereco:" for="txtEndereco">
+					</p:outputLabel>
+					<h:outputText id="txtEndereco"
+						value="#{clienteController.objeto.endereco}" />
+
+					<p:outputLabel value="Bairro:" for="txtBairro" >
+					</p:outputLabel>
+					<h:outputText id="txtBairro"
+						value="#{clienteController.objeto.bairro}" />
+
+					<p:outputLabel value="Numero:" for="txtNumero" >
+					</p:outputLabel>
+					<h:outputText id="txtNumero"
+						value="#{clienteController.objeto.numero}" />
+
+					<p:outputLabel value="Complemento:" for="txtComplemento" >
+					</p:outputLabel>
+					<h:outputText id="txtComplemento"
+						value="#{clienteController.objeto.complemento}" />
+
+					<p:outputLabel value="Telefone:" for="txtTelefone" >
+					</p:outputLabel>
+					<h:outputText id="txtTelefone"
+						value="#{clienteController.objeto.telefone}" />
+
+					<p:outputLabel value="Cidade:" for="txtCidade" >
+					</p:outputLabel>
+					<h:outputText id="txtCidade"
+						value="#{clienteController.objeto.cidade}" />
+
+					<p:outputLabel value="UF:" for="txtUF"  />
+					<h:outputText id="txtUF" value="#{clienteController.objeto.ufNome}" />
+				</p:panelGrid>
+
+			</h:form>
+		</p:dialog>
+
 
 	</ui:define>
 </ui:composition>

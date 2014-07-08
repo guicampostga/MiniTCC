@@ -46,4 +46,9 @@ public class ClienteController extends BaseController<Cliente> {
 			return "";
 		}
 	}
+	
+	public Cliente dadosCompletos(){
+		super.objeto = super.listaDM.getRowData();
+		return super.objeto;
+	}
 }

@@ -146,6 +146,39 @@
 		</navigation-case>
 	</navigation-rule>
 	<!-- Empresa Fim -->
-
+	
+	<!-- Usuario Inicio -->
+	<navigation-rule>
+		<from-view-id>/pages/usuario/listUsuario.xhtml</from-view-id>
+		<navigation-case>
+			<from-outcome>exibirFormularioIncluir</from-outcome>
+			<to-view-id>/pages/usuario/cadUsuario.xhtml</to-view-id>
+			<redirect />
+		</navigation-case>
+		<navigation-case>
+			<from-outcome>exibirFormularioEditar</from-outcome>
+			<to-view-id>/pages/usuario/cadUsuario.xhtml</to-view-id>
+			<redirect />
+		</navigation-case>
+		<navigation-case>
+			<from-outcome>listar</from-outcome>
+			<to-view-id>/pages/usuario/listUsuario.xhtml</to-view-id>
+			<redirect />
+		</navigation-case>
+		<navigation-case>
+			<from-outcome>listar</from-outcome>
+			<to-view-id>/pages/usuario/listUsuario.xhtml</to-view-id>
+			<redirect />
+		</navigation-case>
+	</navigation-rule>
+	<navigation-rule>
+		<from-view-id>/pages/usuario/cadUsuario.xhtml</from-view-id>
+		<navigation-case>
+			<from-outcome>listar</from-outcome>
+			<to-view-id>/pages/usuario/listUsuario.xhtml</to-view-id>
+			<redirect />
+		</navigation-case>
+	</navigation-rule>
+	<!-- Usuario Fim -->
 
 </faces-config>

@@ -16,7 +16,11 @@ public class UsuarioController extends BaseController<Usuario>{
 	@Override
 	public void limpar() {
 		this.objeto = new Usuario();
-		
 	}
-
+	
+	public String lista(){
+		limpar();
+		return "listar";
+	}
+	
 }

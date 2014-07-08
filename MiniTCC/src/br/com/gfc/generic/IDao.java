@@ -16,4 +16,6 @@ public interface IDao<T> {
 	
 	public T listaPorId(Integer Id);
 	
+	public void setCondicaoFixa(String condicaoFixa);
+	
 }

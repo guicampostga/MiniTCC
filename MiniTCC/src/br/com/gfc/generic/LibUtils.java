@@ -5,6 +5,8 @@ import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Date;
 
+import javax.faces.context.FacesContext;
+
 public class LibUtils {
 
 	public static Date dateBR2Date(String data) {
@@ -85,4 +87,8 @@ public class LibUtils {
 	      Integer digito2 = calcularDigito(cnpj.substring(0,12) + digito1, pesoCNPJ);
 	      return cnpj.equals(cnpj.substring(0,12) + digito1.toString() + digito2.toString());
 	   }
+	   
+	   public static String getParameter(String parameter){
+			return FacesContext.getCurrentInstance().getExternalContext().getRequestParameterMap().get(parameter);
+		}
 }
