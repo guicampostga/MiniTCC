@@ -1,0 +1,66 @@
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:p="http://primefaces.org/ui"
+	template="/view/template/template.xhtml">
+	<ui:define name="centro">
+		<f:facet name="header">
+	  				Cadastro de Veiculo
+	  			</f:facet>
+		<div id="DivCad">
+			<h:form id="formCadVeiculo">
+				<p:growl id="growl" autoUpdate="true" life="3500" />
+				<p:panelGrid columns="4" styleClass="gridPanel">
+					<p:outputLabel value="Codigo" for="txtCodigo">
+					</p:outputLabel>
+					<p:inputText id="txtCodigo" readonly="true"
+						value="#{veiculoController.objeto.codigo}" />
+					<p:outputLabel value="Modelo" for="txtModelo">
+					</p:outputLabel>
+					<p:inputText id="txtModelo" required="true"
+						requiredMessage="Campo modelo obrigatorio"
+						value="#{veiculoController.objeto.modeloVeiculo}" />
+
+					<p:outputLabel value="Marca" for="txtMarca">
+					</p:outputLabel>
+					<p:inputText id="txtMarca" required="true"
+						requiredMessage="Campo marca obrigatorio"
+						value="#{veiculoController.objeto.marca}" />
+
+					<p:outputLabel value="Placa" for="txtPlaca">
+					</p:outputLabel>
+					<p:inputMask id="txtPlaca" mask="aaa-9999" required="true"
+						requiredMessage="Campo placa obrigatorio"
+						value="#{veiculoController.objeto.placa}" />
+
+					<p:outputLabel value="Ano Fabricacao" for="txtAno">
+					</p:outputLabel>
+					<p:inputText id="txtAno" required="true" maxlength="4" 
+						requiredMessage="Campo ano fabricacao obrigatorio"
+						value="#{veiculoController.objeto.ano}" />
+
+					<p:outputLabel value="Quantidade Vagas" for="txtVagas">
+					</p:outputLabel>
+					<p:inputText id="txtVagas" required="true"
+						requiredMessage="Campo quantidade vagas Obrigatorio"
+						value="#{veiculoController.objeto.qtdVagas}" />
+				</p:panelGrid>
+				<p:panelGrid columns="2" styleClass="gridBotons">
+					<p:commandButton value="Salvar"
+						rendered="#{veiculoController.objeto.codigo == null}"
+						update="growl, formCadVeiculo" icon="ui-icon-circle-check"
+						action="#{veiculoController.incluir}" />
+
+					<p:commandButton value="Editar"
+						rendered="#{veiculoController.objeto.codigo != null}"
+						update="growl, formCadVeiculo" icon="ui-icon-pencil"
+						action="#{veiculoController.alterar()}"></p:commandButton>
+
+					<p:commandButton value="Cancelar" icon="ui-icon-cancel"
+						update=" formCadVeiculo " action="#{veiculoController.limpar}" />
+				</p:panelGrid>
+			</h:form>
+		</div>
+	</ui:define>
+</ui:composition>

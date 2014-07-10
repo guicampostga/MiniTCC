@@ -1,0 +1,62 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:p="http://primefaces.org/ui">
+
+<h:head>
+	<style>
+.grid tr,td {
+	border: 0px !important;
+}
+
+#margem {
+	border: 1px black;
+}
+</style>
+</h:head>
+<h:body>
+
+	<form id="t" action="j_spring_security_check" method="post">
+		<p:growl id="grow" life="3000" autoUpdate="true" />
+		<p:dialog modal="true" visible="true" showEffect="fade" >
+			<f:facet name="header">Area Restrita</f:facet>
+			<div id="margem">
+				<p:panelGrid columns="2" styleClass="grid" >
+
+					<p:outputLabel value="Usuario:" for="j_username"
+						style="font-size: 13px;" />
+					<p:inputText placeholder="Usuario" id="j_username"
+						style="font-size: 13px;" required="true"
+						requiredMessage="Favor digitar um Usuario" />
+
+
+					<p:outputLabel value="Senha:" for="j_password"
+						style="font-size: 13px;" />
+					<p:password id="j_password" placeholder="Senha" required="true"
+						requiredMessage="Favor digitar uma Senha" style="font-size: 13px;" />
+
+					<f:facet name="footer">
+
+						<button name="submit" type="submit"
+							class="ui-button ui-widget ui-state-default ui-corner-all ui-button-text-only">
+							<span title="teste" class="ui-button-text ui-c"
+								style="font-size: 13px;">Logar</span>
+
+						</button>
+
+					</f:facet>
+
+				</p:panelGrid>
+			</div>
+		</p:dialog>
+
+
+
+
+	</form>
+</h:body>
+
+
+
+</html>

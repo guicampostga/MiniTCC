@@ -1,0 +1,46 @@
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:p="http://primefaces.org/ui"
+	template="/view/template/template.xhtml">
+	<ui:define name="topo">
+		<h:outputText value="Topo Pagina 1" />
+	</ui:define>
+
+	<ui:define name="centro">
+		<f:facet name="header">
+	  				Lista de Funcoes
+	  			</f:facet>
+		<h:form id="formList">
+			<p:dataTable id="tableFuncao" paginator="true" rows="10"
+				value="#{funcaoController.listaDM}" var="_funcao"
+				emptyMessage="Nao foi encontrado nenhuma informacao!">
+
+				<p:column>
+					<f:facet name="header">
+						<h:outputText value="Codigo"></h:outputText>
+					</f:facet>
+					<h:outputText value="#{_funcao.codigo}" />
+				</p:column>
+
+				<p:column>
+					<f:facet name="header">
+						<h:outputText value="Funcao"></h:outputText>
+					</f:facet>
+					<h:outputText value="#{_funcao.descricao}" />
+				</p:column>
+				<p:column>
+					<f:facet name="header">
+						<h:outputText value="Acoes"></h:outputText>
+					</f:facet>
+					<p:commandButton value="Editar"
+						action="#{funcaoController.exibirFormularioEditar()}" />
+					<p:commandButton value="Remover" update="tableFuncao"
+						action="#{funcaoController.remover()}" />
+				</p:column>
+			</p:dataTable>
+
+		</h:form>
+	</ui:define>
+</ui:composition>

@@ -1,0 +1,64 @@
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:p="http://primefaces.org/ui"
+	template="/view/template/template.xhtml">
+	<ui:define name="centro">
+		<f:facet name="header">
+	  				Usuarios Cadastrados
+	  			</f:facet>
+		<h:form id="formList">
+
+			<p:growl id="growl" autoUpdate="true" life="3500" />
+			<p:dataTable id="tableUsuario" paginator="true" rows="10"
+				value="#{usuarioController.listaDM}" var="_usuario"
+				emptyMessage="Nao foi encontrado nenhuma informacao!">
+
+				<p:column>
+					<f:facet name="header">
+						<h:outputText value="Codigo"></h:outputText>
+					</f:facet>
+					<h:outputText value="#{_usuario.codigo}" />
+				</p:column>
+
+				<p:column>
+					<f:facet name="header">
+						<h:outputText value="Username"></h:outputText>
+					</f:facet>
+					<h:outputText value="#{_usuario.username}" />
+				</p:column>
+				<p:column>
+					<f:facet name="header">
+						<h:outputText value="Permissao"></h:outputText>
+					</f:facet>
+					<h:outputText value="#{_usuario.authority}" />
+				</p:column>
+				<p:column>
+					<f:facet name="header">
+						<h:outputText value="Ativo"></h:outputText>
+					</f:facet>
+					<h:outputText value="#{_usuario.enabled}" />
+				</p:column>
+				
+				<p:column>
+					<f:facet name="header">
+						<h:outputText value="Acoes"></h:outputText>
+					</f:facet>
+						<center>
+							<p:commandLink update="tableUsuario"
+								action="#{usuarioController.exibirFormularioEditar()}">
+								<h:graphicImage value="/view/imgs/editar.png" />
+							</p:commandLink>
+							<p:spacer width="20"></p:spacer>    
+							<p:commandLink update="tableUsuario"
+								action="#{usuarioController.remover()}">
+								<h:graphicImage value="/view/imgs/remover.png" />
+							</p:commandLink>
+						</center>
+				</p:column>
+			</p:dataTable>
+		</h:form>
+
+	</ui:define>
+</ui:composition>
